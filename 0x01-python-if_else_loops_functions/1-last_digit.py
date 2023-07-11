@@ -5,6 +5,11 @@ str_num = repr(number)
 last_str = str_num[-1]
 last_digit = int(last_str)
 
+if number < 0:
+    last_digit = number % -10
+else:
+    last_digit = number % 10
+
 if last_digit > 5:
     print("Last digit of {:d} is {:d} and is greater than 5"
           .format(number, last_digit))
