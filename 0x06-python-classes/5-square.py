@@ -62,10 +62,10 @@ class Square:
         """
         Prints the square using the character #.
 
-        If size is equal to 0, print an empty line.
+        If size is equal to 0, prints an empty line.
         """
         if self.__size == 0:
             print()
         else:
             for _ in range(self.__size):
-                print("#" * self.__siz)
+                print("#" * self.__size)
