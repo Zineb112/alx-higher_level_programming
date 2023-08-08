@@ -1,2 +1,2 @@
 class LockedClass:
-    __slots__ = ["Girst_name"]
+    __slots__ = ["first_name"]
