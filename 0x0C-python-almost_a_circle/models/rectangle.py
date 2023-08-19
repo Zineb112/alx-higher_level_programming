@@ -84,3 +84,11 @@ class Rectangle(Base):
 
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+
+    def update(self, *args):
+        """Method to update attributes based on arguments"""
+        if args:
+            arg_names = ["id", "width", "height", "x", "y"]
+            for i, arg in enumerate(args):
+                if i < len(arg_names):
+                    setattr(self, arg_names[i], arg)
