@@ -83,12 +83,16 @@ class Rectangle(Base):
             print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        """Override __str__ method to return a formatted string"""
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Method to update attributes based on arguments"""
         if args:
             arg_names = ["id", "width", "height", "x", "y"]
             for i, arg in enumerate(args):
                 if i < len(arg_names):
                     setattr(self, arg_names[i], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
